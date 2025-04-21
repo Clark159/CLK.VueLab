@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import LayoutWrapper from './components/LayoutWrapper.vue'
 </script>
+
 <template>
-  <RouterLink to="/home">Home</RouterLink><br/>
-  <RouterLink to="/about">About</RouterLink><br/>
-  <RouterView />
+  <LayoutWrapper>
+    <RouterView />
+  </LayoutWrapper>
 </template>

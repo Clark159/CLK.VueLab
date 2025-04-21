@@ -1,6 +1,9 @@
 <script setup lang="ts">
 definePage({
-  path: '/about'
+  path: '/about',
+  meta: {
+    layout: 'AdminLayout'
+  }
 })
 </script>
 
@@ -8,7 +11,7 @@ definePage({
 
   <!-- title -->
   <h3>About</h3>
-  <hr />
+  <hr /><br/>
 
   <!-- run -->
   <button>Run</button><br />
