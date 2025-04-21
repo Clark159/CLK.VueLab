@@ -6,3 +6,9 @@
   </header>  
   <slot />
 </template>
+
+<style scoped>
+header {
+  background: lightgreen;
+}
+</style>
