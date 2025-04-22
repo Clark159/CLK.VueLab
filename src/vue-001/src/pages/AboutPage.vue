@@ -13,7 +13,7 @@ definePage({
   <h3>About</h3>
   <hr /><br/>
 
-<!-- run -->
-<button class="btn">Run</button><br />
-<br />
+  <!-- run -->
+  <button class="btn">Run</button><br />
+  <br />
 </template>
