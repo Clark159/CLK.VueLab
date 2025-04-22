@@ -14,6 +14,6 @@ definePage({
   <hr /><br/>
 
   <!-- run -->
-  <button>Run</button><br />
+  <button class="btn">Run</button><br />
   <br />
 </template>
