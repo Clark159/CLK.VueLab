@@ -1,11 +1,15 @@
+/* import */
 @import 'tailwindcss';
+@plugin "daisyui" { themes: light --default; }
 
+/* tailwind */
 @layer components {
-  .btn {
-    @apply px-4 py-2 rounded text-white bg-blue-500 hover:bg-blue-800;
+  .btn-red {
+    @apply bg-red-500 hover:bg-red-700 text-white;
   }
 }
 
+/* vanilla */
 header {
   background: lightgray;
   display: flex;
