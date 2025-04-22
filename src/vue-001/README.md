@@ -11,6 +11,7 @@ cd vue-001
 npm install
 npm install unplugin-vue-router
 npm install tailwindcss @tailwindcss/vite
+npm install daisyui
 
 
 修改 .vscode/settings.json
