@@ -1,33 +1,96 @@
-# vue-001
+安裝 Node.js
+安裝 VSCode
+安裝 VSCode: Vue-Official
+安裝 VSCode: Tailwind CSS IntelliSense
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+執行 Command
+cd C:\Users\clark\OneDrive\桌面\Lab
+npm create vue@latest vue-001
+cd vue-001
 npm install
-```
+npm install unplugin-vue-router
+npm install tailwindcss @tailwindcss/vite
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
+修改 .vscode/settings.json
+{
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig"
+  }
+}
 
-### Type-Check, Compile and Minify for Production
+複製 .vscode/tasks.json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm run dev",
+      "type": "shell",
+      "command": "npm run dev",
+      "isBackground": true,
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "problemMatcher": {
+        "base": "$tsc-watch",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "vite v\\d+",
+          "endsPattern": "ready in .*"
+        }
+      }
+    }
+  ]
+}
 
-```sh
-npm run build
-```
+複製 .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "npm run dev",
+    "type": "pwa-chrome",
+    "request": "launch",
+    "url": "http://localhost:5173",
+    "webRoot": "${workspaceFolder}",
+    "preLaunchTask": "npm run dev"
+  }]
+}
+
+修改 env.d.ts
+/// <reference types="vite/client" />
+/// <reference types="unplugin-vue-router/client" />
+
+修改 vite.config.ts
+import vueRouter from 'unplugin-vue-router/vite'
+vueRouter({ dts: 'vite.routes.d.ts' })
+
+
+
+
+
+
+
+Vue資料夾分類
+├── layouts/       → 所有 Layout 元件
+├── pages/         → 對應 route 的 Page 元件
+├── views/         → Page 中的模組 View 區塊
+├── blocks/        → 中階組合元件（由多個元素組成）
+└── shared/        → 跨模組共用邏輯，如 composables、utils 等
+   
+
+title
+name
+path
+layout
+scrollToTop
+
