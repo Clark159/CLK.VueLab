@@ -3,9 +3,9 @@
 @plugin "daisyui" { themes: light --default; }
 
 /* tailwind */
-@layer components {
-  .btn-red {
-    @apply bg-red-500 hover:bg-red-700 text-white;
+@layer utilities {
+  .btn.btn-red {
+    @apply px-4 py-2 rounded text-white bg-red-500 hover:bg-red-700;
   }
 }
 
