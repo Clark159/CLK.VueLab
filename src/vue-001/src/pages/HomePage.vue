@@ -1,10 +1,17 @@
 <script setup lang="ts">
+
+// define
 definePage({
   path: '/home',
   meta: {
     layout: 'DefaultLayout'
   }
 })
+
+// methods
+function run() {
+  alert('Home')
+}
 </script>
 
 <template>
@@ -14,6 +21,6 @@ definePage({
   <hr /><br/>
 
   <!-- run -->
-  <button class="btn btn-red">Run</button>
+  <button class="btn btn-red" @click="run">Run</button>
   <br />
 </template>
