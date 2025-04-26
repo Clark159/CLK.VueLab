@@ -3,11 +3,11 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import { fblRouter } from './src/modules/fbl/ovp-router'
+import { ovpApplication } from './src/modules/fbl/ovp-application'
 
 export default defineConfig({
   plugins: [
-    fblRouter(),
+    ovpApplication(),
     vue(),
     vueDevTools(),
     tailwindcss(),
