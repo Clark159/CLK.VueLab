@@ -2,7 +2,7 @@
 
 // define
 definePage({
-  path: '/config',
+  path: '/modules/fbl-ovp-configuration',
   meta: {
     layout: 'DefaultLayout'
   }
@@ -23,17 +23,17 @@ async function run() {
   const setting = await configuration.bind<Setting>('settings')
   
   // display
-  alert(`Base URL: ${setting.baseUrl}`)
+  alert(setting.baseUrl)
 }
 </script>
 
 <template>
 
   <!-- title -->
-  <h3>Config</h3>
+  <h3 class="text-2xl font-bold">fbl-ovp-configuration</h3>
   <hr /><br/>
 
   <!-- run -->
-  <button class="btn btn-red" @click="run">Run</button>
+  <button class="btn btn-primary" @click="run">Run</button>
   <br />
 </template>

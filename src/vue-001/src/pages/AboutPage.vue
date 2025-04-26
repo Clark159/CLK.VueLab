@@ -10,14 +10,14 @@ definePage({
 
 // methods
 function run() {
-  alert('About')
+  alert('關於我們')
 }
 </script>
 
 <template>
 
   <!-- title -->
-  <h3>About</h3>
+  <h3 class="text-2xl font-bold">關於我們</h3>
   <hr /><br/>
 
   <!-- run -->

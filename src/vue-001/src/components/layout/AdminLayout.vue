@@ -6,7 +6,7 @@ import MainHeader from './MainHeader.vue'
 import MainSidebar from './MainSidebar.vue'
 
 // fields
-const isSidebarOpen = ref<boolean>(false)
+const isSidebarOpen = ref<boolean>(true)
 
 // methods
 function toggleSidebar(): void {
