@@ -20,7 +20,7 @@ interface Setting {
 async function run() {
 
   // bind
-  const setting = await configuration.bind<Setting>('settings')
+  const setting = await configuration.bind<Setting>('fbl.module01.setting')
   
   // display
   alert(setting.baseUrl)
