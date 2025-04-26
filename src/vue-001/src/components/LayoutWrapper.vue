@@ -2,17 +2,17 @@
 
 // import
 import { useRoute } from 'vue-router'
-import { ref, watchEffect, defineAsyncComponent } from 'vue'
+import { shallowRef, watchEffect, defineAsyncComponent } from 'vue'
 
 // route
 const route = useRoute()
-const layoutComponent = ref()
-watchEffect(() => {
+const layoutComponent = shallowRef() 
 
+watchEffect(() => {
+  
   // layoutName
   let layoutName = route.meta.layout
-  if(layoutName == '') layoutName = 'DefaultLayout'
-  if(layoutName == null) layoutName = 'DefaultLayout'
+  if(layoutName === '' || layoutName == null) layoutName = 'DefaultLayout'
 
   // layoutComponent
   layoutComponent.value = defineAsyncComponent(() =>
