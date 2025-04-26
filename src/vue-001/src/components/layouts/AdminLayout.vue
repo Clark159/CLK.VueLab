@@ -1,3 +1,14 @@
+<script setup>
+import { ref } from 'vue'
+import MainHeader from './MainHeader.vue'
+import MainSidebar from './MainSidebar.vue'
+
+const isSidebarOpen = ref(false)
+function toggleSidebar() {
+  isSidebarOpen.value = !isSidebarOpen.value
+}
+</script>
+
 <template>
   <div class="flex h-screen">    
     <MainSidebar v-if="isSidebarOpen" />
@@ -9,17 +20,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import MainHeader from '../shared/MainHeader.vue'
-import MainSidebar from '../shared/MainSidebar.vue'
-
-const isSidebarOpen = ref(false)
-function toggleSidebar() {
-  isSidebarOpen.value = !isSidebarOpen.value
-}
-</script>
 
 <style scoped>
 header {
