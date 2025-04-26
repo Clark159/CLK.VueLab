@@ -1,35 +1,34 @@
+<script setup lang="ts">
+
+// define
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
+  }
+});
+</script>
+
 <template>
-    <header class="navbar bg-base-100 shadow-md px-4">
-      <div class="flex-none">
-        <button class="btn btn-ghost btn-circle" @click="$emit('toggle-sidebar')">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
-  
-      <div class="flex-1 px-4">
-        <span class="text-xl font-bold">My Dashboard</span>
-      </div>
-  
-      <div class="flex-none">
-        <div class="avatar">
-          <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src="https://i.pravatar.cc/100?img=32" />
-          </div>
+  <div class="navbar bg-base-100 shadow-sm">
+
+    <div class="navbar-start">
+      <button class="btn btn-square btn-ghost" @click="$emit('toggle-sidebar')">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
+      </button>
+      <a class="btn btn-ghost text-xl">{{ props.title }}</a>
+    </div>
+    
+    <div class="navbar-end">
+      <button class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
+      </button>
+      <button class="btn btn-ghost btn-circle">
+        <div class="indicator">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /> </svg>
         </div>
-      </div>
-    </header>
-  </template>
+      </button>
+    </div>
+  </div>
+</template>
   
