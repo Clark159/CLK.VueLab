@@ -16,7 +16,7 @@ watchEffect(() => {
 
   // layoutComponent
   layoutComponent.value = defineAsyncComponent(() =>
-    import(`../components/layouts/${layoutName}.vue`)
+    import(`../components/layout/${layoutName}.vue`)
   )
 })
 </script>
