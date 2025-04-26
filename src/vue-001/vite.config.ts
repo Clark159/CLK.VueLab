@@ -1,18 +1,13 @@
 import vue from '@vitejs/plugin-vue'
-import vueRouter from 'unplugin-vue-router/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
+import { fblRouter } from './src/modules/fbl/ovp-router'
 
 export default defineConfig({
   plugins: [
-    vueRouter({ 
-      dts: 'src/app.routes.d.ts',
-      routesFolder: 'src/pages',
-      extensions: ['.vue'],
-      exclude: ['**/!(*Page).vue'],
-    }),
+    fblRouter(),
     vue(),
     vueDevTools(),
     tailwindcss(),
