@@ -19,7 +19,6 @@
           </ul>
         </details>
       </li>
-      <li><router-link to="/contact">聯絡我們</router-link></li>
     </ul>
   </div>
 </template>
