@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
 // import
-import LayoutWrapper from './LayoutWrapper.vue'
+import LayoutView from './LayoutView.vue'
 </script>
 
 <template>
-  <LayoutWrapper>
+  <LayoutView>
     <RouterView />
-  </LayoutWrapper>
+  </LayoutView>
 </template>

@@ -21,6 +21,6 @@ function run() {
   <hr /><br/>
 
   <!-- run -->
-  <button class="btn btn-red" @click="run">Run</button>
+  <button class="btn btn-primary" @click="run">Run</button>
   <br />
 </template>
