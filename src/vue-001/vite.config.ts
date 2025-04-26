@@ -8,7 +8,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     vueRouter({ 
-      dts: 'src/main.routes.d.ts',
+      dts: 'src/app.routes.d.ts',
       routesFolder: 'src/pages',
       extensions: ['.vue'],
       exclude: ['**/!(*Page).vue'],
