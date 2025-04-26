@@ -33,4 +33,4 @@ class Configuration {
 const configuration = new Configuration()
 
 // export
-export { configuration }
+export default configuration

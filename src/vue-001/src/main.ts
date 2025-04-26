@@ -1,6 +1,6 @@
 // application
 import './assets/main.css'
-import App from './modules/fbl/ovp-application/app'
+import App from '@/modules/fbl/ovp-application/app'
 
 // platform 
 import { createApp } from 'vue'

@@ -9,7 +9,7 @@ definePage({
 })
 
 // imports
-import { configuration } from '@/modules/fbl/ovp-configuration'
+import configuration from '@/modules/fbl/ovp-configuration'
 
 // types
 interface Setting {
