@@ -3,7 +3,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import { ovpApplication } from './src/modules/fbl/ovp-application'
+import { ovpApplication } from './src/modules/fbl/ovp-application/vite'
 
 export default defineConfig({
   plugins: [
