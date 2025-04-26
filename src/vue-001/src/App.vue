@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LayoutWrapper from '@/components/LayoutWrapper.vue'
+import LayoutWrapper from '@/modules/fbl/ovp-router/LayoutWrapper.vue'
 </script>
 
 <template>
