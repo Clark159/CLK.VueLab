@@ -1,6 +1,6 @@
 {
-    "settings": {
-      "baseUrl": "https://api.example.com"
-    }
+  "settings": {
+    "baseUrl": "https://api.example.com"
   }
+}
   
