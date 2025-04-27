@@ -11,11 +11,6 @@ definePage({
 // imports
 import configuration from '@/modules/fbl/ovp-configuration'
 
-// types
-interface Setting {
-  baseUrl: string
-}
-
 // methods
 async function run() {
 
@@ -24,6 +19,11 @@ async function run() {
   
   // display
   alert(setting.baseUrl)
+}
+
+// class
+interface Setting {
+  baseUrl: string
 }
 </script>
 
