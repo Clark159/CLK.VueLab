@@ -8,7 +8,7 @@
 
 /* tailwind */
 @layer utilities {
-  .btn.btn-red {
+  .btn-red {
     @apply px-4 py-2 rounded text-white bg-red-500 hover:bg-red-700;
   }
 }

@@ -24,3 +24,11 @@ function run() {
   <button class="btn btn-red" @click="run">Run</button>
   <br />
 </template>
+
+<style scoped>
+@layer utilities {
+  h3 {
+    color: red;
+  }
+}
+</style>

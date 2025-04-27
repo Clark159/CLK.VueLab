@@ -27,7 +27,9 @@ function toggleSidebar(): void {
 </template>
 
 <style scoped>
-.navbar {
-  background: lightgreen !important;
+@layer utilities {
+  .navbar {
+    background: red;
+  }
 }
 </style>
