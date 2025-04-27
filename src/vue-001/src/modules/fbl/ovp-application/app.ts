@@ -1,5 +1,5 @@
-// Imports
+// import
 import App from './components/App.vue'
 
-// Exports
+// export
 export default App
