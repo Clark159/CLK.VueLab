@@ -2,20 +2,19 @@
 import './assets/main.css'
 
 // platform 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from '@/modules/fbl/ovp-application'
 import { createRouter } from '@/modules/fbl/ovp-application/router'
-import App from '@/modules/fbl/ovp-application/app'
+import { createPinia } from 'pinia'
 
 // pinia
 const pinia = createPinia()
 
 // router
 const router = createRouter()
-router.addRoute({  path: '/:pathMatch(.*)*',  redirect: '/home', })
+router.addRoute({  path: '/:pathMatch(.*)*',  redirect: '/home' })
 
 // build
-const app = createApp(App)
+const app = createApp()
 app.use(pinia)
 app.use(router)
 app.mount('#app')
