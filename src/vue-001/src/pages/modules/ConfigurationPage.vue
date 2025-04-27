@@ -8,7 +8,7 @@ definePage({
   }
 })
 
-// imports
+// import
 import configuration from '@/modules/fbl/ovp-configuration'
 
 // methods

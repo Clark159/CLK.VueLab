@@ -1,4 +1,4 @@
-// Imports
+// import
 import { createRouter as createVueRouter, createWebHistory as createVueWebHistory } from 'vue-router/auto'
 import { routes } from 'vue-router/auto-routes'
 
