@@ -2,16 +2,16 @@
 import { createApp } from '@/modules/fbl/ovp-application'
 import { createRouter } from '@/modules/fbl/ovp-application/router'
 import { createPinia } from 'pinia'
-import configuration from '@/modules/fbl/ovp-configuration'
+import { createConfiguration } from '@/modules/fbl/ovp-configuration'
 
 // application
 import './assets/style/main.css'
 
 // main
 async function main() {
-    
+
     // configuration
-    await configuration.initialize()
+    const configuration = await createConfiguration()
 
     // router
     const router = createRouter()

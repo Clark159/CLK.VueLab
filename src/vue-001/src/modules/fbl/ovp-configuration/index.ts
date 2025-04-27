@@ -7,7 +7,7 @@ class Configuration {
 
 
     // methods
-    async initialize(configUrl: string = './app.config.json'): Promise<void> {
+    async initialize(configUrl: string): Promise<void> {
 
         // contracts
         if (this.configData !== null) return
@@ -40,6 +40,15 @@ class Configuration {
 
 // singleton
 const configuration = new Configuration()
+async function createConfiguration(configUrl: string = './app.config.json'): Promise<Configuration> {
+
+    // initialize
+    await configuration.initialize(configUrl)
+
+    // return
+    return configuration
+}
 
 // export
 export default configuration
+export { createConfiguration }
