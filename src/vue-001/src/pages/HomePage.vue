@@ -17,7 +17,7 @@ function run() {
 <template>
 
   <!-- title -->
-  <h3>網站首頁</h3>
+  <h3 class="text-2xl font-bold">網站首頁</h3>
   <hr /><br/>
 
   <!-- run -->
