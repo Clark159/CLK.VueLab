@@ -1,9 +1,16 @@
 {
-  "fbl": {
-    "module01": {
-      "setting": {
-        "baseUrl": "https://www.example.com"
-      }
+    "fbl": {
+        "module01": {
+            "setting": {
+                "baseUrl": "https://www.example.com"
+            }
+        },
+        "network": {
+            "http": {
+                "httpClient": {
+                    "baseUrl": "https://jsonplaceholder.typicode.com/"
+                }
+            }
+        }
     }
-  }
 }

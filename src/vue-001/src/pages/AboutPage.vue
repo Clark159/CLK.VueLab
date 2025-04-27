@@ -22,7 +22,7 @@ function run() {
 
   <!-- run -->
   <button class="btn btn-red" @click="run">Run</button>
-  <br />
+  <br /><br />
 </template>
 
 <style scoped>

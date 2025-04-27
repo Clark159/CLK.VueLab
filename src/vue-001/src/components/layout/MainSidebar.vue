@@ -16,6 +16,7 @@
           <summary>模組範例</summary>
           <ul>
             <li><router-link to="/modules/fbl-ovp-configuration">fbl-ovp-configuration</router-link></li>
+            <li><router-link to="/modules/fbl-ovp-network-http">fbl-ovp-network-http</router-link></li>
           </ul>
         </details>
       </li>

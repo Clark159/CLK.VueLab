@@ -35,5 +35,5 @@ interface Setting {
 
   <!-- run -->
   <button class="btn btn-primary" @click="run">Run</button>
-  <br />
+  <br /><br />
 </template>
