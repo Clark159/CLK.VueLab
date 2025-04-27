@@ -1,65 +1,70 @@
-html {
+@layer base {
+  html {
     @apply m-0 h-full text-[16px] leading-normal;
-}
+  }
 
-body {
-    @apply m-0 h-full scroll-smooth p-0 font-normal text-gray-b6;
+  body {
+    @apply m-0 h-full scroll-smooth p-0 font-normal text-gray-b6 bg-green-500;
     scroll-behavior: smooth;
-}
+  }
 
-#app {
+  #app {
     @apply flex min-h-full flex-col;
-}
+  }
 
-main {
-    flex-grow: 1;
-}
+  main {
+    @apply flex-grow;
+  }
 
-*,
-*:before,
-*:after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-}
+  }
 
-* {
+  * {
     font-family:
-        -apple-system, BlinkMacSystemFont, 'Microsoft JhengHei', 'PingFang', 'Segoe UI', Roboto,
-        'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
+      -apple-system, BlinkMacSystemFont, 'Microsoft JhengHei', 'PingFang', 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
 
-a {
+  a {
     @apply cursor-pointer text-primary no-underline;
-}
+  }
 
-p {
+  p {
     @apply m-0;
-}
+  }
 
-ul,
-ol {
+  ul,
+  ol {
     @apply m-0 list-none p-0;
-}
+  }
 
-span,
-p,
-li {
+  span,
+  p,
+  li {
     @apply max-h-full;
-}
+  }
 
-.ime-Keyboard div#keyboard_switch {
-    @apply hidden;
-}
-ul,
-ol,
-div,
-span,
-p,
-li,
-h3,
-h4,
-h5 {
+  ul,
+  ol,
+  div,
+  span,
+  p,
+  li,
+  h3,
+  h4,
+  h5 {
     @apply break-words;
     word-break: break-word;
+  }
+}
+
+@layer utilities {
+  .ime-Keyboard div#keyboard_switch {
+    @apply hidden;
+  }
 }
