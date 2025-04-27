@@ -1,0 +1,9 @@
+{
+    "fbl": {
+        "module01": {
+            "setting": {
+                "baseUrl": "https://api.example.com"
+            }
+        }
+    }
+}

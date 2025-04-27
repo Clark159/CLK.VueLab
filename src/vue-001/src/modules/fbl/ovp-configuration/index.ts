@@ -1,3 +1,5 @@
+// import
+import merge from "lodash.merge"
 
 // class
 class Configuration {
@@ -7,17 +9,24 @@ class Configuration {
 
 
     // methods
-    async initialize(configUrl: string): Promise<void> {
+    async initialize(): Promise<void> {
 
         // contracts
         if (this.configData !== null) return
 
-        // read
-        const response = await fetch(configUrl, { cache: 'no-store' })
-        if (!response.ok) throw new Error(`[fbl-ovp-configuration] 無法載入 ${configUrl}`)
+        // baseConfig
+        const baseConfigUrl = "./app.config.json"
+        const baseConfig = await this.fetchConfig(baseConfigUrl)
+
+        // envConfig
+        const envConfigUrl = `./app.${import.meta.env.MODE}.config.json`
+        let envConfig = {}
+        if (import.meta.env.MODE) {
+            envConfig = await this.fetchConfig(envConfigUrl)
+        }
 
         // configData
-        this.configData = await response.json()
+        this.configData = merge({}, baseConfig, envConfig)
     }
 
     bind<T>(path: string): T {
@@ -33,6 +42,28 @@ class Configuration {
         return targetData as T
     }
 
+    private async fetchConfig(configUrl: string): Promise<any> {
+
+        // execute
+        try {
+            
+            // fetch
+            const response = await fetch(configUrl, { cache: 'no-store' })
+            if (!response.ok) throw new Error(`HTTP ${response.status}`)
+
+            // return
+            return await response.json()
+
+        } catch (error) {
+
+            // log
+            console.warn(`[fbl-ovp-configuration] 載入設定失敗：${configUrl}`, error)
+
+            // return
+            return {}
+        }
+    }
+
     private get(obj: any, path: string): any {
         return path.split('.').reduce((o, key) => (o ? o[key] : undefined), obj)
     }
@@ -40,10 +71,10 @@ class Configuration {
 
 // singleton
 const configuration = new Configuration()
-async function createConfiguration(configUrl: string = './app.config.json'): Promise<Configuration> {
+async function createConfiguration(): Promise<Configuration> {
 
     // initialize
-    await configuration.initialize(configUrl)
+    await configuration.initialize()
 
     // return
     return configuration
