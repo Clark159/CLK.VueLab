@@ -4,7 +4,7 @@ import { createRouter } from '@/modules/fbl/ovp-application/router'
 import { createPinia } from 'pinia'
 
 // application
-import './assets/main.css'
+import './assets/style/main.css'
 
 // router
 const router = createRouter()
