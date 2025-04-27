@@ -12,10 +12,10 @@ definePage({
 import configuration from '@/modules/fbl/ovp-configuration'
 
 // methods
-async function run() {
+function run() {
 
   // bind
-  const setting = await configuration.bind<Setting>('fbl.module01.setting')
+  const setting = configuration.bind<Setting>('fbl.module01.setting')
   
   // display
   alert(setting.baseUrl)
