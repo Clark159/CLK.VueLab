@@ -1,14 +1,23 @@
-/* platform */
+/* tailwindcss */
 @import 'tailwindcss';
-@plugin "daisyui" { themes: light --default; }
+
+/* daisyui */
+@plugin "daisyui" { themes: light; }
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #0093c1;
+  --color-secondary: #ccf3ff;
+  --color-error: #bc3941;
+}
 
 /* application */
 @import './brand.css';
 @import './reset.css';
 
-/* tailwind */
+/* style */
 @layer utilities {
-  .btn-red {
-    @apply text-white bg-red-500 hover:bg-red-700;
+  .btn-red {    
+    @apply text-white bg-error hover:bg-error-focus;
   }
 }

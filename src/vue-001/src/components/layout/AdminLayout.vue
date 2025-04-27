@@ -29,7 +29,7 @@ function toggleSidebar(): void {
 <style scoped>
 @layer utilities {
   .navbar {
-    background: red;
+    background: var(--color-error);
   }
 }
 </style>

@@ -28,7 +28,7 @@ function run() {
 <style scoped>
 @layer utilities {
   h3 {
-    color: red;
+    color: var(--color-error);
   }
 }
 </style>
