@@ -1,5 +1,7 @@
 // import
 import configuration from '@/modules/fbl/ovp-configuration'
+import axios from 'axios'
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 // class
 class HttpClient {
