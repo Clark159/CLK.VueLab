@@ -8,4 +8,4 @@ class Host {
 const host = new Host()
 
 // export
-export { host }
+export default host
