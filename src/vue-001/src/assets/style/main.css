@@ -3,28 +3,8 @@
 
 /* daisyui */
 @plugin "daisyui" { themes: light; }
-@plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-  --color-primary: #0093c1;
-  --color-secondary: #ccf3ff;
-  --color-error: #bc3941;
-  --color-error-content: #ffffff;
-}
-
-/* application */
-@import './brand.css';
-@import './reset.css';
 
 /* style */
-@layer utilities {
-
-  .btn-red {
-    color: var(--color-error-content);
-    background-color: var(--color-error);
-  }
-
-  .btn-red:hover {
-    filter: brightness(85%); 
-  }
-}
+@import './reset.css';
+@import './brand.css';
+@import './app.css';

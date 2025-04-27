@@ -1,0 +1,9 @@
+/* daisyui */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #0093c1;
+  --color-secondary: #ccf3ff;
+  --color-error: #bc3941;
+  --color-error-content: #ffffff;
+}
