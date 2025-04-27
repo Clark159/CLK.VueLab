@@ -9,6 +9,7 @@
   --color-primary: #0093c1;
   --color-secondary: #ccf3ff;
   --color-error: #bc3941;
+  --color-error-content: #ffffff;
 }
 
 /* application */
@@ -17,7 +18,13 @@
 
 /* style */
 @layer utilities {
-  .btn-red {    
-    @apply text-white bg-error hover:bg-error-focus;
+
+  .btn-red {
+    color: var(--color-error-content);
+    background-color: var(--color-error);
+  }
+
+  .btn-red:hover {
+    filter: brightness(85%); 
   }
 }
