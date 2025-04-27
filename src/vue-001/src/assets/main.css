@@ -1,6 +1,9 @@
-/* import */
+/* platform */
 @import 'tailwindcss';
 @plugin "daisyui" { themes: light --default; }
+
+/* application */
+@import './brand.css';
 
 
 /* tailwind */
@@ -8,12 +11,4 @@
   .btn.btn-red {
     @apply px-4 py-2 rounded text-white bg-red-500 hover:bg-red-700;
   }
-}
-
-/* vanilla */
-header {
-  background: lightgray;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }

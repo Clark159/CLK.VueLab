@@ -1,10 +1,10 @@
-// application
-import './assets/main.css'
-
 // platform 
 import { createApp } from '@/modules/fbl/ovp-application'
 import { createRouter } from '@/modules/fbl/ovp-application/router'
 import { createPinia } from 'pinia'
+
+// application
+import './assets/main.css'
 
 // router
 const router = createRouter()
