@@ -1,0 +1,123 @@
+@layer base {
+    .gradient {
+        @apply bg-gradient-to-r from-primary to-success;
+    }
+    .full-screen {
+        /* padding-top: constant(safe-area-inset-top);
+        padding-right: constant(safe-area-inset-right);
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-left: constant(safe-area-inset-left);
+        padding-left: env(safe-area-inset-left, 1.5rem);
+        padding-top: env(safe-area-inset-top, 1.5rem);
+        padding-right: env(safe-area-inset-right, 1.5rem);
+        padding-bottom: env(safe-area-inset-bottom, 1.5rem); */
+    }
+    .max-width {
+        @apply max-w-[26.875rem];
+    }
+    .mt-base {
+        margin-top: 3.75rem;
+        /* 60px */
+    }
+    .position-top-base {
+        top: 3.75rem;
+    }
+}
+
+@layer components {
+    .radio {
+        @apply w-[1.25rem] h-[1.25rem];
+    }
+    .radio:not(:checked),
+    .radio:not(:disabled) {
+        @apply bg-white;
+    }
+    .radio:checked {
+        @apply bg-primary;
+    }
+    .radio:not(:checked) {
+        @apply border-gray-b1;
+    }
+    .radio:checked {
+        box-shadow: 0 0 0 3px #eef0f0 inset;
+    }
+    .radio:disabled:checked {
+        @apply bg-gray-b10 border-gray-b1;
+    }
+    .radio:disabled {
+        @apply bg-gray-b1 opacity-100;
+    }
+    .checkbox {
+        @apply rounded h-5 w-5 border;
+    }
+    .checkbox:not(:checked),
+    .checkbox:not(:disabled) {
+        @apply bg-white;
+    }
+    .checkbox-primary:checked {
+        @apply border-primary;
+        background-image:
+            linear-gradient(-45deg, transparent 65%, #0093c1 65.99%),
+            linear-gradient(45deg, transparent 75%, #0093c1 75.99%),
+            linear-gradient(-45deg, #0093c1 40%, transparent 40.99%),
+            linear-gradient(45deg, #0093c1 30%, #fff 30.99%, #fff 40%, transparent 40.99%),
+            linear-gradient(-45deg, #fff 50%, #0093c1 50.99%) !important;
+    }
+    .checkbox-error:checked {
+        @apply border-error;
+        background-image:
+            linear-gradient(-45deg, transparent 65%, #eb4751 65.99%),
+            linear-gradient(45deg, transparent 75%, #eb4751 75.99%),
+            linear-gradient(-45deg, #eb4751 40%, transparent 40.99%),
+            linear-gradient(45deg, #eb4751 30%, #fff 30.99%, #fff 40%, transparent 40.99%),
+            linear-gradient(-45deg, #fff 50%, #eb4751 50.99%) !important;
+    }
+    .checkbox:disabled:checked {
+        background-image:
+            linear-gradient(-45deg, transparent 65%, #eef0f0 65.99%),
+            linear-gradient(45deg, transparent 75%, #eef0f0 75.99%),
+            linear-gradient(-45deg, #eef0f0 40%, transparent 40.99%),
+            linear-gradient(45deg, #eef0f0 30%, #aeafb4 30.99%, #aeafb4 40%, transparent 40.99%),
+            linear-gradient(-45deg, #aeafb4 50%, #eef0f0 50.99%) !important;
+    }
+    .checkbox:disabled {
+        @apply !bg-gray-b1 opacity-100 border-gray-b10;
+    }
+    .checkbox:indeterminate {
+        background-image:
+            linear-gradient(90deg, transparent 80%, #fff 80%),
+            linear-gradient(-90deg, transparent 80%, #fff 80%),
+            linear-gradient(0deg, #fff 20%, var(--chkbg) 20%, var(--chkbg) 80%, #fff 80%);
+    }
+    .btn:focus-visible,
+    .checkbox:focus-visible,
+    .radio:focus-visible {
+        @apply outline-primary/60;
+    }
+    .btn-primary,
+    .btn-accent,
+    .btn-neutral {
+        color: #fff;
+    }
+    .btn-primary:hover {
+        background:
+            linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), #0093c1;
+    }
+    .btn-secondary:hover {
+        background:
+            linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%), #ccf3ff;
+    }
+    .btn-danger:hover {
+        background:
+            linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), #bc3941;
+    }
+    .btn-secondary:not(:disabled) {
+        @apply !text-primary;
+    }
+}
+
+@layer utilities {
+    .scrollbar-gray-thin {
+        @apply scrollbar-thin scrollbar-track-[#EEEEEE50] scrollbar-thumb-[#99999980] scrollbar-thumb-rounded-sm;
+    }
+}
