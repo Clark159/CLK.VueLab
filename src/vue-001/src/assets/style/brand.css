@@ -3,7 +3,12 @@
   name: "light";
   default: true;
   --color-primary: #0093c1;
-  --color-secondary: #ccf3ff;
-  --color-error: #bc3941;
+  --color-secondary: #CCF3FF;
+  --color-error: #EB4751;
+  --color-accent: #F5693D;
+  --color-info: #00D4F0;
+  --color-warning: #FFC94F;
+  --color-success: #00A59B;
+  --color-neutral: #00A59B;
   --color-error-content: #ffffff;
 }
