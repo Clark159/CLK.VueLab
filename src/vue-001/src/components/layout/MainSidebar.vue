@@ -4,10 +4,11 @@
     <ul class="menu w-72 p-4">
       <li>
         <details open>
-          <summary>頁面範例</summary>
+          <summary>框架範例</summary>
           <ul>
             <li><router-link to="/home">網站首頁</router-link></li>
-            <li><router-link to="/about">關於我們</router-link></li>
+            <li><router-link to="/home">排版設定</router-link></li>
+            <li><router-link to="/about">樣式設定</router-link></li>
           </ul>
         </details>
       </li>
