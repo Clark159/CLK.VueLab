@@ -12,7 +12,7 @@ definePage({
 import counterMemoryStore from '@/stores/CounterMemoryStore'
 
 // methods
-function run() {
+function memoryStoreIncrement() {
 
     // increment
     counterMemoryStore.increment()
@@ -32,6 +32,6 @@ function run() {
     <hr /><br />
 
     <!-- run -->
-    <button class="btn btn-primary" @click="run">Run</button>
+    <button class="btn btn-primary" @click="memoryStoreIncrement">MemoryStore: Count++</button>
     <br /><br />
 </template>

@@ -7,7 +7,7 @@ class CounterMemoryStore extends Store<Counter> {
     
     // constructors
     constructor() {
-        super('counter-store')
+        super('counter-memory-store')
     }
 
     // methods
@@ -19,11 +19,15 @@ class CounterMemoryStore extends Store<Counter> {
             
             // create
             counter = new Counter()
+
+            // add
             this.add(counter)
         }
 
-        // update
+        // increment
         counter.value = counter.value + 1
+
+        // update
         this.update(counter)
     }
 }

@@ -24,7 +24,7 @@ function callFunction() {
     const result = sum(1, 2);
 
     // display
-    alert(`callPage: ${result}`)
+    alert(`Call Function: ${result}`)
 }
 
 function callService() {
@@ -33,7 +33,7 @@ function callService() {
     const result = numberService.multiply(3, 4);
 
     // display
-    alert(`callService: ${result}`)
+    alert(`Call Service: ${result}`)
 }
 </script>
 
