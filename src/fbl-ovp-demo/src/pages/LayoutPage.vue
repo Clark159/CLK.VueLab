@@ -2,26 +2,26 @@
 
 // define
 definePage({
-    path: '/style',
+    path: '/layout',
     meta: {
-        layout: 'DefaultLayout'
+        layout: 'BlankLayout'
     }
 })
 
 // methods
 function run() {
-    alert('關於我們')
+    alert('排版設定')
 }
 </script>
 
 <template>
 
     <!-- title -->
-    <h3 class="text-2xl font-bold">關於我們</h3>
+    <h3 class="text-2xl font-bold">排版設定</h3>
     <hr /><br />
 
     <!-- run -->
-    <button class="btn btn-red" @click="run">Run</button>
+    <router-link class="btn btn-red" to="/home">回到首頁</router-link>
     <br /><br />
 </template>
 

@@ -19,7 +19,7 @@ function toggleSidebar(): void {
         <MainSidebar v-if="isSidebarOpen" />
         <div class="flex-1 flex flex-col">
             <MainHeader title="Open Vue Platform" @toggle-sidebar="toggleSidebar" />
-            <main class="flex-1 p-6 overflow-auto">
+            <main class="flex-1 p-6">
                 <slot />
             </main>
         </div>
