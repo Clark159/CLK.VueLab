@@ -12,6 +12,9 @@ export default function defineStore<T>(storeId: string) {
     if (storeIdList.has(storeId)) throw new Error(`[fbl-ovp-store] storeId重複註冊：${storeId}`)
     storeIdList.add(storeId)
 
+    // persist
+    let persist = false
+
     // create
     return definePiniaStore(storeId, () => {
 
@@ -89,6 +92,7 @@ export default function defineStore<T>(storeId: string) {
 
         // return
         return {
+            itemList,
             add,
             update,
             remove,
@@ -96,5 +100,7 @@ export default function defineStore<T>(storeId: string) {
             find,
             findAll,
         }
+    }, {
+        persist: persist
     })
 }
