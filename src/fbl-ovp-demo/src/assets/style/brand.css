@@ -4,6 +4,7 @@
   default: true;
   --color-primary: #0093c1;
   --color-secondary: #CCF3FF;
+  --color-secondary-content: #184d5b;
   --color-error: #EB4751;
   --color-accent: #F5693D;
   --color-info: #00D4F0;
