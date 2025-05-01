@@ -2,7 +2,7 @@
 import { createApp } from '@/modules/fbl/ovp-application'
 import { createConfiguration } from '@/modules/fbl/ovp-configuration/plugin'
 import { createStore } from '@/modules/fbl/ovp-store/plugin'
-import { createRouter } from '@/modules/fbl/ovp-application/plugin'
+import { createRouter } from '@/modules/fbl/ovp-router/plugin'
 
 // application
 import './assets/style/main.css'
@@ -21,7 +21,7 @@ async function main() {
     router.addRoute({ path: '/', redirect: '/home' })
     router.addRoute({ path: '/:pathMatch(.*)*', redirect: '/not-found' })
 
-    // build
+    // application
     const app = createApp()
     app.use(store)
     app.use(router)
