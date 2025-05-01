@@ -1,5 +1,6 @@
 // import
 import defineStore from './PiniaStore'
+import StoreMode from './StoreMode'
 
 // class
 export default class Store<T> {
@@ -9,9 +10,10 @@ export default class Store<T> {
 
 
     // constructors
-    constructor(storeId: string, prototype: object) {
+    constructor(storeId: string, prototype: object, storeMode: StoreMode = StoreMode.Local) {
         
-        this.store = defineStore<T>(storeId, prototype)()
+        // Store
+        this.store = defineStore<T>(storeId, prototype, storeMode)()
     }
 
 

@@ -1,19 +1,32 @@
 // import
-import { defineStore as definePiniaStore } from 'pinia'
 import { ref, type Ref } from 'vue'
+import { defineStore as definePiniaStore } from 'pinia'
+import StoreMode from './StoreMode'
 
 // singleton
 const storeIdList = new Set<string>()
 
 // class
-export default function defineStore<T>(storeId: string, prototype: object) {
+export default function defineStore<T>(storeId: string, prototype: object, storeMode: StoreMode = StoreMode.Local) {
 
     // register
     if (storeIdList.has(storeId)) throw new Error(`[fbl-ovp-store] storeId重複註冊：${storeId}`)
     storeIdList.add(storeId)
 
     // persist
-    let persist = true
+    let persist: boolean | { storage: Storage }
+    switch (storeMode) {
+        case StoreMode.Memory:
+            persist = false
+            break
+        case StoreMode.Session:
+            persist = { storage: sessionStorage }
+            break
+        case StoreMode.Local:
+        default:
+            persist = { storage: localStorage }
+            break
+    }
 
     // create
     return definePiniaStore(storeId, () => {
