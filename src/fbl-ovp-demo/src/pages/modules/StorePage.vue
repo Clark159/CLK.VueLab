@@ -9,16 +9,24 @@ definePage({
 })
 
 // import
+import Counter from '@/stores/Counter'
 import counterMemoryStore from '@/stores/CounterMemoryStore'
 
 // methods
 function memoryStoreIncrement() {
 
-    // increment
-    counterMemoryStore.increment()
-
-    // find
-    const counter = counterMemoryStore.find()
+    // counter
+    let counter = counterMemoryStore.find()
+    if(!counter) {
+        // add
+        counter = new Counter();
+        counterMemoryStore.add(counter);
+    }
+    else{
+        // update
+        counter.increment();
+        counterMemoryStore.update(counter)
+    }    
 
     // display
     alert(`目前 count：${counter?.value}`)

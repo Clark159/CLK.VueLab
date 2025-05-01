@@ -2,5 +2,11 @@
 export default class Counter {
 
     // Properties
-    value: number = 0
+    value: number = 1
+
+
+    // methods
+    increment(): void {
+        this.value++
+    }
 }

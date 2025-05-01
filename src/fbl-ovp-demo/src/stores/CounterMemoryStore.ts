@@ -9,27 +9,6 @@ class CounterMemoryStore extends Store<Counter> {
     constructor() {
         super('counter-memory-store')
     }
-
-    // methods
-    increment(): void {
-
-        // find
-        let counter = this.find()
-        if (!counter) {
-            
-            // create
-            counter = new Counter()
-
-            // add
-            this.add(counter)
-        }
-
-        // increment
-        counter.value = counter.value + 1
-
-        // update
-        this.update(counter)
-    }
 }
 
 // singleton
