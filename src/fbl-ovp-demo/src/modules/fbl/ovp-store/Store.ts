@@ -4,7 +4,7 @@ export default interface Store<T> {
     // methods
     add(item: T): void
 
-   // update(item: T): void
+    update(item: T, predicate: (item: T) => boolean): void
 
     remove(predicate: (item: T) => boolean): void
 

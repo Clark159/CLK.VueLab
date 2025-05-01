@@ -31,6 +31,7 @@
                     <ul>
                         <li><router-link to="/modules/fbl-ovp-configuration">fbl-ovp-configuration</router-link></li>
                         <li><router-link to="/modules/fbl-ovp-network-http">fbl-ovp-network-http</router-link></li>
+                        <li><router-link to="/modules/fbl-ovp-store">fbl-ovp-store</router-link></li>
                     </ul>
                 </details>
             </li>
