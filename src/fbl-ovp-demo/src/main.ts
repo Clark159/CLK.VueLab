@@ -1,8 +1,8 @@
 // platform 
 import { createApp } from '@/modules/fbl/ovp-application'
-import { createRouter } from '@/modules/fbl/ovp-application/plugin'
+import { createConfiguration } from '@/modules/fbl/ovp-configuration/plugin'
 import { createStore } from '@/modules/fbl/ovp-store/plugin'
-import { createConfiguration } from '@/modules/fbl/ovp-configuration'
+import { createRouter } from '@/modules/fbl/ovp-application/plugin'
 
 // application
 import './assets/style/main.css'
