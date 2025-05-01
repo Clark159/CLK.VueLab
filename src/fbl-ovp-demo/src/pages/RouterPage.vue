@@ -14,8 +14,8 @@ definePage({
     <hr /><br />
 
     <!-- run -->
-    <router-link class="btn btn-primary" to="/">回到首頁</router-link>
-    <br /><br />
     <router-link class="btn btn-primary" to="/dfdfdcx">找不到頁面</router-link>
+    <br /><br />
+    <router-link class="btn btn-primary" to="/">回到首頁</router-link>
     <br /><br />
 </template>
