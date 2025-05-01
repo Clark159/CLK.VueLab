@@ -1,5 +1,5 @@
 // import
-import defineStore from "./PiniaStore"
+import Store from "./Store"
 
 // export
-export default defineStore
+export default Store
