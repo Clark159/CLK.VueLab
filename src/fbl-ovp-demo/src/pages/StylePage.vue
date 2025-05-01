@@ -10,12 +10,12 @@ definePage({
 
 // methods
 function run() {
-    alert('樣式設定')
+    alert('樣式管理')
 }
 </script><template>
 
     <!-- title -->
-    <h3 class="text-2xl font-bold">樣式設定</h3>
+    <h3 class="text-2xl font-bold">樣式管理</h3>
     <hr /><br />
 
     <!-- run -->

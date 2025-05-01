@@ -12,7 +12,7 @@ definePage({
 <template>
 
     <!-- title -->
-    <h3 class="text-2xl font-bold">排版設定</h3>
+    <h3 class="text-2xl font-bold">排版管理</h3>
     <hr /><br />
 
     <!-- run -->

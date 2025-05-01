@@ -2,7 +2,7 @@
 
 // define
 definePage({
-    path: '/notFound',
+    path: '/not-found',
     meta: {
         layout: 'DefaultLayout'
     }

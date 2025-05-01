@@ -10,7 +10,7 @@ definePage({
 </script><template>
 
     <!-- title -->
-    <h3 class="text-2xl font-bold">路由設定</h3>
+    <h3 class="text-2xl font-bold">路由管理</h3>
     <hr /><br />
 
     <!-- run -->

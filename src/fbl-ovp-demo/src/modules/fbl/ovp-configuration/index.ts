@@ -57,7 +57,7 @@ class Configuration {
         } catch (error) {
 
             // log
-            console.warn(`[fbl-ovp-configuration] 載入設定失敗：${configUrl}`, error)
+            console.warn(`[fbl-ovp-configuration] Failed to load configuration: ${configUrl}`, error);
 
             // return
             return {}
