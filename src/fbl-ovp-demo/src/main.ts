@@ -26,4 +26,4 @@ async function main() {
     app.use(pinia)
     app.mount('#app')
 }
-main().catch((error) => { console.error('啟動失敗', error)})
+main().catch((error) => { console.error('啟動失敗', error) })

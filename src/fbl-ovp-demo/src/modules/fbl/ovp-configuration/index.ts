@@ -46,7 +46,7 @@ class Configuration {
 
         // execute
         try {
-            
+
             // fetch
             const response = await fetch(configUrl, { cache: 'no-store' })
             if (!response.ok) throw new Error(`HTTP ${response.status}`)

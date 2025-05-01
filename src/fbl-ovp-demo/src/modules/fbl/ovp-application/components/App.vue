@@ -5,7 +5,7 @@ import LayoutView from './LayoutView.vue'
 </script>
 
 <template>
-  <LayoutView>
-    <RouterView />
-  </LayoutView>
+    <LayoutView>
+        <RouterView />
+    </LayoutView>
 </template>
