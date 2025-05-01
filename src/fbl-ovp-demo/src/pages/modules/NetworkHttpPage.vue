@@ -24,11 +24,6 @@ async function run() {
         result.value = `發生錯誤：${error}`
     }
 }
-
-// class
-interface Setting {
-    baseUrl: string
-}
 </script>
 
 <template>
