@@ -13,7 +13,7 @@ export default function defineStore<T>(storeId: string) {
     storeIdList.add(storeId)
 
     // persist
-    let persist = false
+    let persist = true
 
     // create
     return definePiniaStore(storeId, () => {
