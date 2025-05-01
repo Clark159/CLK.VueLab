@@ -22,6 +22,7 @@ declare module 'vue-router/auto-routes' {
     '/components/FontPage': RouteRecordInfo<'/components/FontPage', '/components/font', Record<never, never>, Record<never, never>>,
     '/components/LoadingPage': RouteRecordInfo<'/components/LoadingPage', '/components/loading', Record<never, never>, Record<never, never>>,
     '/components/ModalPage': RouteRecordInfo<'/components/ModalPage', '/components/modal', Record<never, never>, Record<never, never>>,
+    '/FunctionrPage': RouteRecordInfo<'/FunctionrPage', '/function', Record<never, never>, Record<never, never>>,
     '/HomePage': RouteRecordInfo<'/HomePage', '/home', Record<never, never>, Record<never, never>>,
     '/LayoutPage': RouteRecordInfo<'/LayoutPage', '/layout', Record<never, never>, Record<never, never>>,
     '/modules/ConfigurationPage': RouteRecordInfo<'/modules/ConfigurationPage', '/modules/fbl-ovp-configuration', Record<never, never>, Record<never, never>>,
@@ -29,7 +30,6 @@ declare module 'vue-router/auto-routes' {
     '/modules/StorePage': RouteRecordInfo<'/modules/StorePage', '/modules/fbl-ovp-store', Record<never, never>, Record<never, never>>,
     '/NotFoundPage': RouteRecordInfo<'/NotFoundPage', '/not-found', Record<never, never>, Record<never, never>>,
     '/RouterPage': RouteRecordInfo<'/RouterPage', '/router', Record<never, never>, Record<never, never>>,
-    '/ServicerPage': RouteRecordInfo<'/ServicerPage', '/service', Record<never, never>, Record<never, never>>,
     '/StylePage': RouteRecordInfo<'/StylePage', '/style', Record<never, never>, Record<never, never>>,
   }
 }

@@ -10,9 +10,49 @@ definePage({
 
 // import
 import Counter from '@/stores/Counter'
+import counterLocalStore from '@/stores/CounterLocalStore'
+import counterSessionStore from '@/stores/CounterSessionStore'
 import counterMemoryStore from '@/stores/CounterMemoryStore'
 
 // methods
+function localStoreIncrement() {
+
+    // counter
+    let counter = counterLocalStore.find()
+    if(!counter) {
+        // add
+        counter = new Counter();
+        counterLocalStore.add(counter);
+    }
+    else{
+        // update
+        counter.increment();
+        counterLocalStore.update(counter)
+    }    
+
+    // display
+    alert(`LocalStore Count：${counter?.value}`)
+}
+
+function sessionStoreIncrement() {
+
+    // counter
+    let counter = counterSessionStore.find()
+    if(!counter) {
+        // add
+        counter = new Counter();
+        counterSessionStore.add(counter);
+    }
+    else{
+        // update
+        counter.increment();
+        counterSessionStore.update(counter)
+    }    
+
+    // display
+    alert(`SessionStore Count：${counter?.value}`)
+}
+
 function memoryStoreIncrement() {
 
     // counter
@@ -29,7 +69,7 @@ function memoryStoreIncrement() {
     }    
 
     // display
-    alert(`目前 count：${counter?.value}`)
+    alert(`MemoryStore Count：${counter?.value}`)
 }
 </script>
 
@@ -40,6 +80,11 @@ function memoryStoreIncrement() {
     <hr /><br />
 
     <!-- run -->
+    <button class="btn btn-primary" @click="localStoreIncrement">LocalStore: Count++</button>
+    <br /><br />
+    <button class="btn btn-primary" @click="sessionStoreIncrement">SessionStore: Count++</button>
+    <br /><br />
     <button class="btn btn-primary" @click="memoryStoreIncrement">MemoryStore: Count++</button>
     <br /><br />
+    
 </template>

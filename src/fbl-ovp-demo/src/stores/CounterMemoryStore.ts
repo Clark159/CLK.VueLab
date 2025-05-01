@@ -6,7 +6,7 @@ import Counter from './Counter'
 class CounterMemoryStore extends Store<Counter> {
     
     // constructors
-    constructor() { super('counter-memory-store', Counter.prototype, StoreMode.Local) }
+    constructor() { super('counter-memory-store', Counter.prototype, StoreMode.Memory) }
 }
 
 // singleton
