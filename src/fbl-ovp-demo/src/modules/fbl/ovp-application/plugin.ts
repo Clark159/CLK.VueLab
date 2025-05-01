@@ -6,8 +6,11 @@ import { routes } from 'vue-router/auto-routes'
 export function createRouter() {
 
     // createRouter
-    return createVueRouter({
+    const router = createVueRouter({
         history: createVueWebHistory(import.meta.env.BASE_URL),
         routes: routes
     })
+
+    // return
+    return router
 }
