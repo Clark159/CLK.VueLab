@@ -1,6 +1,6 @@
 // imports
 import Store from '@/modules/fbl/ovp-store'
-import Counter from './Counter123'
+import Counter from './Counter'
 
 // class
 class CounterMemoryStore extends Store<Counter> {
@@ -11,7 +11,7 @@ class CounterMemoryStore extends Store<Counter> {
     }
 
     // methods
-    increment(id: string): void {
+    increment(): void {
 
         // find
         let counter = this.find()
@@ -27,3 +27,9 @@ class CounterMemoryStore extends Store<Counter> {
         this.update(counter)
     }
 }
+
+// singleton
+const counterMemoryStore = new CounterMemoryStore()
+
+// export
+export default counterMemoryStore

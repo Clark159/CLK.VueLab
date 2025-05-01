@@ -9,31 +9,19 @@ definePage({
 })
 
 // import
-import defineStore from '@/modules/fbl/ovp-store'
+import counterMemoryStore from '@/stores/CounterMemoryStore'
 
 // methods
 function run() {
 
-    // create
-    const store = defineStore<Setting>('setting')
-    
-    // 嘗試找到 id 為 'default' 的設定
-    let setting = store.find(o => true)
-  if (!setting) {
-    setting = {  count: 1 }
-    store.add(setting)
-  } else {
-    const updatedSetting = { count: setting.count + 1 }
-    store.update(updatedSetting, o => true)
-    setting = updatedSetting
-  }
+    // increment
+    counterMemoryStore.increment()
 
-  alert(`目前 count：${setting.count}`)
-}
+    // find
+    const counter = counterMemoryStore.find()
 
-// class
-interface Setting {
-    count: number
+    // display
+    alert(`目前 count：${counter?.value}`)
 }
 </script>
 
