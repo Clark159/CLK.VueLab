@@ -9,9 +9,9 @@ export default class Store<T> {
 
 
     // constructors
-    constructor(storeId: string) {
+    constructor(storeId: string, prototype: object) {
         
-        this.store = defineStore<T>(storeId)()
+        this.store = defineStore<T>(storeId, prototype)()
     }
 
 

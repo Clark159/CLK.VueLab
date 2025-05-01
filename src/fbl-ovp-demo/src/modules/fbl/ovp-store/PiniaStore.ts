@@ -6,7 +6,7 @@ import { ref, type Ref } from 'vue'
 const storeIdList = new Set<string>()
 
 // class
-export default function defineStore<T>(storeId: string) {
+export default function defineStore<T>(storeId: string, prototype: object) {
 
     // register
     if (storeIdList.has(storeId)) throw new Error(`[fbl-ovp-store] storeId重複註冊：${storeId}`)
@@ -74,19 +74,29 @@ export default function defineStore<T>(storeId: string) {
 
             // require
             if (itemList.value.length === 0) return undefined
-            
+
             // find
-            return predicate
+            const result = predicate
                 ? itemList.value.find(predicate)
                 : itemList.value[0]
+
+            // prototype
+            return result && prototype
+                ? Object.setPrototypeOf(result, prototype)
+                : result
         }
 
         function findAll(predicate?: (item: T) => boolean): T[] {
 
             // find
-            return predicate
+            const result = predicate
                 ? itemList.value.filter(predicate)
                 : [...itemList.value]
+
+            // prototype
+            return prototype
+                ? result.map(item => Object.setPrototypeOf(item, prototype))
+                : result
         }
 
 

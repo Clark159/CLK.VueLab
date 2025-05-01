@@ -7,7 +7,7 @@ class CounterMemoryStore extends Store<Counter> {
     
     // constructors
     constructor() {
-        super('counter-memory-store')
+        super('counter-memory-store', Counter.prototype )
     }
 }
 
