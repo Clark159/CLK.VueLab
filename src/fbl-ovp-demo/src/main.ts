@@ -15,7 +15,8 @@ async function main() {
 
     // router
     const router = createRouter()
-    router.addRoute({ path: '/:pathMatch(.*)*', redirect: '/home' })
+    router.addRoute({ path: '/', redirect: '/home' })
+    router.addRoute({ path: '/:pathMatch(.*)*', redirect: '/notFound' })
 
     // pinia
     const pinia = createPinia()

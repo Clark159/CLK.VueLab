@@ -8,6 +8,7 @@
                     <ul>
                         <li><router-link to="/home">網站首頁</router-link></li>
                         <li><router-link to="/style">樣式設定</router-link></li>
+                        <li><router-link to="/router">路由設定</router-link></li>
                         <li><router-link to="/layout">排版設定</router-link></li>
                     </ul>
                 </details>

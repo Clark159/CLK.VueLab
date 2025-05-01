@@ -22,6 +22,8 @@ declare module 'vue-router/auto-routes' {
     '/LayoutPage': RouteRecordInfo<'/LayoutPage', '/layout', Record<never, never>, Record<never, never>>,
     '/modules/ConfigurationPage': RouteRecordInfo<'/modules/ConfigurationPage', '/modules/fbl-ovp-configuration', Record<never, never>, Record<never, never>>,
     '/modules/NetworkHttpPage': RouteRecordInfo<'/modules/NetworkHttpPage', '/modules/fbl-ovp-network-http', Record<never, never>, Record<never, never>>,
+    '/NotFoundPage': RouteRecordInfo<'/NotFoundPage', '/notFound', Record<never, never>, Record<never, never>>,
+    '/RouterPage': RouteRecordInfo<'/RouterPage', '/router', Record<never, never>, Record<never, never>>,
     '/StylePage': RouteRecordInfo<'/StylePage', '/style', Record<never, never>, Record<never, never>>,
   }
 }

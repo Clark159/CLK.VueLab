@@ -2,20 +2,20 @@
 
 // define
 definePage({
-    path: '/layout',
+    path: '/router',
     meta: {
-        layout: 'BlankLayout'
+        layout: 'DefaultLayout'
     }
 })
-</script>
-
-<template>
+</script><template>
 
     <!-- title -->
-    <h3 class="text-2xl font-bold">排版設定</h3>
+    <h3 class="text-2xl font-bold">路由設定</h3>
     <hr /><br />
 
     <!-- run -->
     <router-link class="btn btn-primary" to="/">回到首頁</router-link>
+    <br /><br />
+    <router-link class="btn btn-primary" to="/dfdfdcx">找不到頁面</router-link>
     <br /><br />
 </template>
