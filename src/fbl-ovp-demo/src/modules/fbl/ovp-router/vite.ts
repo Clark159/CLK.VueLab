@@ -3,7 +3,7 @@
 import vueRouter from 'unplugin-vue-router/vite'
 
 // export
-export default function ovpApplication() {
+export default function ovpRouter() {
 
     // vueRouter
     return vueRouter({
