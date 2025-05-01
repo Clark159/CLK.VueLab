@@ -1,97 +1,47 @@
-安裝 Node.js
-安裝 VSCode
-安裝 VSCode: Vue-Official
-安裝 VSCode: Tailwind CSS IntelliSense
+## Open Vue Platform 使用說明
 
+### 1. 專案簡介
+- 專案目標：支援快速開發與前後端專業分工
+- 技術架構：Vue、Tailwind CSS、DaisyUI、TypeScript
+- 適用角色：具備網頁能力的後端工程師與 Vue 前端工程師
 
-執行 Command
-cd C:\Users\clark\OneDrive\桌面\Lab
-npm create vue@latest vue-001
-cd vue-001
-npm install
-npm install unplugin-vue-router
-npm install tailwindcss @tailwindcss/vite
-npm install daisyui
+### 2. 環境準備
+- 安裝 Node.js（npm 版本需 > 10.0.0）
+- 安裝 VSCode（含 Volar、Tailwind CSS IntelliSense 擴充套件）
 
+### 3. 初始化專案
+- 建立 Git Repository 並複製至本機
+- 複製 `src/` 及設定檔（如 `vite.config.ts`、`tsconfig.json`）
+- 調整命名與目錄結構（如有需要）
+- 提交並推送至遠端 Git 倉庫
 
-修改 .vscode/settings.json
-{
-  "files.associations": {
-    "*.css": "postcss"
-  },
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "tsconfig.json": "tsconfig.*.json, env.d.ts",
-    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig"
-  }
-}
+### 4. 安裝與啟動
+- 執行 `npm install` 安裝依賴
+- 執行 `npm run dev` 啟動伺服器
 
-複製 .vscode/tasks.json
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "npm run dev",
-      "type": "shell",
-      "command": "npm run dev",
-      "isBackground": true,
-      "options": {
-        "shell": {
-          "executable": "cmd.exe",
-          "args": ["/d", "/c"]
-        }
-      },
-      "problemMatcher": {
-        "base": "$tsc-watch",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": "vite v\\d+",
-          "endsPattern": "ready in .*"
-        }
-      }
-    }
-  ]
-}
+### 5. 專案結構確認
+- 使用 VSCode 開啟資料夾
+- 確認 `src/` 結構與設定檔完整、無錯誤
 
-複製 .vscode/launch.json
-{
-  "version": "0.2.0",
-  "configurations": [{
-    "name": "npm run dev",
-    "type": "pwa-chrome",
-    "request": "launch",
-    "url": "http://localhost:5173",
-    "webRoot": "${workspaceFolder}",
-    "preLaunchTask": "npm run dev"
-  }]
-}
+### 6. 建立測試頁面
+- 在 `src/pages` 新增 `hello.vue`
+- 撰寫簡單內容（如顯示文字、加入按鈕）
 
-修改 env.d.ts
-/// <reference types="vite/client" />
-/// <reference types="unplugin-vue-router/client" />
+### 7. 設定選單與路由
+- 編輯側欄元件（如 `app.config.ts` 或 layout）新增頁面連結
+- 驗證頁面能透過側欄進入
 
-修改 vite.config.ts
-import vueRouter from 'unplugin-vue-router/vite'
-vueRouter({ dts: 'vite.routes.d.ts' })
+### 8. 頁面驗證與互動測試
+- 啟動後於瀏覽器檢查畫面與元件互動行為
+- 驗證標準：頁面載入成功、按鈕有反應、無錯誤訊息
 
+### 9. 常見問題與排除
+- 畫面未更新：重啟 VSCode 或清除快取
+- 無法預覽：檢查是否安裝 Chrome 與路由註冊正確
 
-
-
-
-
-
-Vue資料夾分類
-├── layouts/       → 所有 Layout 元件
-├── pages/         → 對應 route 的 Page 元件
-├── views/         → Page 中的模組 View 區塊
-├── blocks/        → 中階組合元件（由多個元素組成）
-└── shared/        → 跨模組共用邏輯，如 composables、utils 等
-   
-
-title
-name
-path
-layout
-scrollToTop
+### 10. 後續建議
+- 測試頁面正常即代表建置成功
+- 建議閱讀《開發規範》進行命名與結構優化
+- 可提交測試頁面作為初始化完成紀錄
+- 推薦依此架構進行模組化開發與團隊協作
 
