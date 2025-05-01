@@ -16,7 +16,7 @@
 
 - 安裝 [Node.js](https://nodejs.org/)（建議版本：Node ≥ 18，npm ≥ 10.0.0）
 - 安裝 [Visual Studio Code](https://code.visualstudio.com/) 並加入以下擴充套件：
-  - Volar（Vue 開發輔助）
+  - Vue - Official（Vue 官方擴充套件）
   - Tailwind CSS IntelliSense（Tailwind 自動補全與檢查）
 
 ## 3. 初始化專案
