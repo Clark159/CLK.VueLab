@@ -7,31 +7,49 @@ import com.atlassian.bitbucket.user.UserService
 import com.atlassian.bitbucket.user.SecurityService
 import com.atlassian.bitbucket.hook.repository.RepositoryHookResult
 import com.atlassian.bitbucket.auth.AuthenticationContext
+import com.atlassian.bitbucket.project.ProjectService
+import com.atlassian.bitbucket.pull.PullRequestService
+import com.atlassian.bitbucket.util.PageRequestImpl
+import com.atlassian.bitbucket.user.ApplicationUser
 
 // services
 def userService = ComponentLocator.getComponent(UserService)
 def securityService = ComponentLocator.getComponent(SecurityService)
 def authContext = ComponentLocator.getComponent(AuthenticationContext)
+def projectService = ComponentLocator.getComponent(ProjectService)
+def pullRequestService = ComponentLocator.getComponent(PullRequestService)
 
-// branches
+// variables
+def project = mergeRequest.pullRequest.toRef.repository.project
 def sourceBranch = mergeRequest.pullRequest.fromRef.displayId?.toUpperCase()
 def targetBranch = mergeRequest.pullRequest.toRef.displayId?.toUpperCase()
 
-// currentUser
-def currentUser = authContext.getCurrentUser()
-if (currentUser == null) {
-    return RepositoryHookResult.rejected("拒絕合併", "無法識別目前使用者")
-}
+// configuration
+def configuration = project.description
+    .readLines()
+    .findAll { it.contains("=") }
+    .collectEntries { line ->
+        def parts = line.split("=", 2)
+        def key = parts[0].trim()
+        def value = parts.length > 1 ? parts[1].trim() : ""
+        [(key): value]
+    }
+String devUserGroupName = configuration["AP科員"]
+String devManagerGroupName = configuration["AP科長"]
+String sysManagerGroupName = "sys-manager"
 
-// 規則：僅允許從UAT分支發出PR到PROD分支。
-if (targetBranch == "PROD" && sourceBranch != "UAT") {
-    return RepositoryHookResult.rejected("拒絕合併", "僅允許從UAT分支發出PR到PROD分支。")
-}
+// group
+def devUsers = userService.findUsersByGroup(devUserGroupName, new PageRequestImpl(0, 100)).values
+def devManagers = userService.findUsersByGroup(devManagerGroupName, new PageRequestImpl(0, 100)).values
+def sysManagers = userService.findUsersByGroup(sysManagerGroupName, new PageRequestImpl(0, 100)).values
 
 // 規則：僅允許資管人員進行PR合併。
-if (currentUser.name != "SM001" ) {
-    return RepositoryHookResult.rejected("拒絕合併", "僅允許資管人員進行PR合併。")
-}
+def currentUser = authContext.getCurrentUser()
+if (currentUser == null) return RepositoryHookResult.rejected("拒絕合併", "無法識別目前使用者")
+if (!sysManagers.any { it.name == currentUser.name }) return RepositoryHookResult.rejected("拒絕合併", "僅允許資管人員進行PR合併。")
+
+// 規則：僅允許從UAT分支發出PR到PROD分支。
+if (targetBranch == "PROD" && sourceBranch != "UAT") return RepositoryHookResult.rejected("拒絕合併", "僅允許從UAT分支發出PR到PROD分支。")
 
 // 通過合併檢查
 return RepositoryHookResult.accepted()
