@@ -5,7 +5,7 @@ docker run --name bitbucket -p 7990:7990 -p 7999:7999 -v C:/Bitbucket/data:/var/
 
 mkdir C:\Bamboo\data
 docker pull atlassian/bamboo:latest
-docker run --name bamboo -p 8085:8085 -v C:/Bamboo:/var/atlassian/application-data/bamboo -d atlassian/bamboo:latest
+docker run --name bamboo -p 8085:8085 -v C:/Bamboo/data:/var/atlassian/application-data/bamboo -d atlassian/bamboo:latest
 
 
 2. RBAC
