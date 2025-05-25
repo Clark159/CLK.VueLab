@@ -1,11 +1,9 @@
 // platform 
+import '@/modules/fbl/ovp-components'
 import { createApp } from '@/modules/fbl/ovp-application'
 import { createConfiguration } from '@/modules/fbl/ovp-configuration/plugin'
 import { createStore } from '@/modules/fbl/ovp-store/plugin'
 import { createRouter } from '@/modules/fbl/ovp-router/plugin'
-
-// component
-import '@/components-web'
 
 // application
 import './assets/style/main.css'

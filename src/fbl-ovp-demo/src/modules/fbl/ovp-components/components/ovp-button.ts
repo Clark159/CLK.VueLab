@@ -8,7 +8,7 @@ export class OvpButton extends HTMLElement {
             display: inline-block;
           }
         </style>
-        <button class="btn btn-primary">
+        <button class="btn btn-red">
             ${this.innerHTML}
         </button>
     `;}
