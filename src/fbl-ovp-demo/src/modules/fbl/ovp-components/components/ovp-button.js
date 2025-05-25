@@ -1,35 +1,35 @@
 // class
-export class OvpButton extends HTMLElement {
+class OvpButton extends HTMLElement {
 
-    // template
-    private render(): void { this.innerHTML = `
+    // constructors
+    initialize() { this.innerHTML = `
         <style>
-          ovp-button {
-            display: inline-block;
-          }
+            ovp-button {
+                display: inline-block;
+            }
         </style>
-        <button class="btn btn-red">
+        <button class="btn btn-primary">
             ${this.innerHTML}
         </button>
     `;}
 
-    connectedCallback(): void {
-        this.render();
+    connectedCallback() {
+        this.initialize();
         const button = this.querySelector('button');
         if (button) {
             button.addEventListener('click', this.button_click);
         }
     }
-
-    disconnectedCallback(): void {
+    
+    disconnectedCallback() {
         const button = this.querySelector('button');
         if (button) {
             button.removeEventListener('click', this.button_click);
         }
-    }    
+    }
 
     // handlers
-    private button_click = (): void => {
+    button_click = () => {
         this.dispatchEvent(
             new CustomEvent('ovp-click', {
                 detail: { source: 'ovp-button' },
@@ -37,10 +37,10 @@ export class OvpButton extends HTMLElement {
                 composed: true
             })
         );
-    };
+    }
 }
 
 // define
 if (!customElements.get('ovp-button')) {
     customElements.define('ovp-button', OvpButton);
-}  
+}
