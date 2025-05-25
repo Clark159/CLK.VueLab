@@ -23,4 +23,7 @@ function run() {
     <!-- run -->
     <button class="btn btn-primary" @click="run">Run</button>
     <br /><br />
+
+    <ovp-button @click="run">Run</ovp-button>
+    <br /><br />
 </template>
