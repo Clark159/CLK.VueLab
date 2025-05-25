@@ -12,6 +12,10 @@ definePage({
 function run() {
     alert('網站首頁')
 }
+
+function goHTML() {
+    window.location.href = '/demo.html';
+}
 </script>
 
 <template>
@@ -24,6 +28,6 @@ function run() {
     <button class="btn btn-primary" @click="run">Run</button>
     <br /><br />
 
-    <ovp-button @ovp-click="run">Run</ovp-button>
+    <ovp-button @ovp-click="goHTML">Go HTML</ovp-button>
     <br /><br />
 </template>
