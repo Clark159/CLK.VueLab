@@ -1,1 +1,0 @@
-FROM atlassian/bamboo-agent-base:latest
